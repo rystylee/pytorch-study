@@ -32,7 +32,7 @@ class CNN(nn.Module):
 
 
 def main():
-    # Loading and normalizing CIFAR10 
+    # Loading and normalizing CIFAR10
     transform = transforms.Compose(transforms=[transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
     trainset = torchvision.datasets.CIFAR10(root='../data/cifar_10', train=True, download=True, transform=transform)
@@ -65,7 +65,7 @@ def main():
 
             # forward + backward + optimize
             outputs = model(inputs)
-            loss = criterion(outputs, labels) # this is same as criterion.forward(outputs, labels) 
+            loss = criterion(outputs, labels) # this is same as criterion.forward(outputs, labels)
             loss.backward() # Calculate differential coefficient
             optimizer.step() # Update parameters
 
